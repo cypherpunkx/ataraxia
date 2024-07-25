@@ -7,8 +7,6 @@ import portfinder from 'portfinder';
 
 const numCPUs = os.cpus().length;
 
-function coba() {}
-
 if (cluster.isPrimary) {
   console.log(`Master process ${process.pid} is running`);
 
@@ -16,7 +14,7 @@ if (cluster.isPrimary) {
     cluster.fork();
   }
 
-  cluster.on('exit', (worker, code, signal) => {
+  cluster.on('exit', (worker, _code, _signal) => {
     console.log(`Worker process ${worker.process.pid} died. Restarting...`);
     cluster.fork();
   });

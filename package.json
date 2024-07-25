@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
-    "prettier:lint": "npx prettier . --write",
+    "format": "npx prettier . --write",
     "prettier:check": "npx prettier . --check",
     "lint": "npx eslint src/**/*.ts",
     "prepare": "husky"
