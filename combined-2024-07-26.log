@@ -1,0 +1,403 @@
+{"level":"info","message":"Master process 15964 is running"}
+{"level":"info","message":"Worker process 8128 is listening on port 3000"}
+{"level":"info","message":"Worker process 10300 is listening on port 3000"}
+{"level":"info","message":"Worker process 14424 is listening on port 3000"}
+{"level":"info","message":"Worker process 17656 is listening on port 3000"}
+{"level":"info","message":"Worker process 14424 died. Restarting..."}
+{"level":"info","message":"Master process 8636 is running"}
+{"level":"info","message":"Worker process 14948 is listening on port 3000"}
+{"level":"info","message":"Worker process 2468 is listening on port 3000"}
+{"level":"info","message":"Worker process 17916 is listening on port 3000"}
+{"level":"info","message":"Worker process 12644 is listening on port 3000"}
+{"level":"info","message":"Worker process 2468 died. Restarting..."}
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+{
+  message: [32m'Master process 17508 is running'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:56:40.673Z'[39m
+}
+{
+  message: [32m'Worker process 14024 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:56:44.566Z'[39m
+}
+{
+  message: [32m'Worker process 14732 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:56:44.566Z'[39m
+}
+{
+  message: [32m'Worker process 16688 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:56:44.610Z'[39m
+}
+{
+  message: [32m'Worker process 8684 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:56:44.722Z'[39m
+}
+{
+  message: [32m'Worker process 16688 died. Restarting...'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:19.332Z'[39m
+}
+{
+  message: [32m'Master process 3664 is running'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:21.794Z'[39m
+}
+{
+  message: [32m'Worker process 4600 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:27.034Z'[39m
+}
+{
+  message: [32m'Worker process 17384 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:27.060Z'[39m
+}
+{
+  message: [32m'Worker process 16456 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:27.164Z'[39m
+}
+{
+  message: [32m'Worker process 13176 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:27.305Z'[39m
+}
+{
+  message: [32m'Worker process 4600 died. Restarting...'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:50.734Z'[39m
+}
+{
+  message: [32m'Worker process 17384 died. Restarting...'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:50.764Z'[39m
+}
+{
+  message: [32m'Master process 5260 is running'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:53.028Z'[39m
+}
+{
+  message: [32m'Worker process 17128 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:59.056Z'[39m
+}
+{
+  message: [32m'Worker process 16964 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:59.086Z'[39m
+}
+{
+  message: [32m'Worker process 15108 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:59.175Z'[39m
+}
+{
+  message: [32m'Worker process 15468 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:59.392Z'[39m
+}
+{
+  message: [32m'Worker process 16964 died. Restarting...'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:57:59.774Z'[39m
+}
+{
+  message: [32m'Master process 13116 is running'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:01.977Z'[39m
+}
+{
+  message: [32m'Worker process 372 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:05.692Z'[39m
+}
+{
+  message: [32m'Worker process 2140 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:05.750Z'[39m
+}
+{
+  message: [32m'Worker process 12884 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:05.802Z'[39m
+}
+{
+  message: [32m'Worker process 15432 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:05.858Z'[39m
+}
+{
+  message: [32m'Worker process 372 died. Restarting...'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:22.428Z'[39m
+}
+{
+  message: [32m'Master process 10636 is running'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:27.351Z'[39m
+}
+{
+  message: [32m'Worker process 12368 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:31.296Z'[39m
+}
+{
+  message: [32m'Worker process 14488 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:31.450Z'[39m
+}
+{
+  message: [32m'Worker process 9704 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:31.536Z'[39m
+}
+{
+  message: [32m'Worker process 3100 is listening on port 3000'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:31.628Z'[39m
+}
+{
+  message: [32m'Worker process 9704 died. Restarting...'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:33.873Z'[39m
+}
+{
+  message: [32m'Worker process 14488 died. Restarting...'[39m,
+  level: [32m'info'[39m,
+  timestamp: [32m'2024-07-25T19:58:33.963Z'[39m
+}
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+{"level":"info","message":"Master process 17960 is running","timestamp":"2024-07-25T20:06:29.270Z"}
+{"level":"info","message":"Worker process 15004 is listening on port 3000","timestamp":"2024-07-25T20:06:32.807Z"}
+{"level":"info","message":"Worker process 3560 is listening on port 3000","timestamp":"2024-07-25T20:06:32.820Z"}
+{"level":"info","message":"Worker process 1608 is listening on port 3000","timestamp":"2024-07-25T20:06:32.901Z"}
+{"level":"info","message":"Worker process 11816 is listening on port 3000","timestamp":"2024-07-25T20:06:33.328Z"}
+{"level":"info","message":"Worker process 1608 died. Restarting...","timestamp":"2024-07-25T20:07:29.381Z"}
+{"level":"info","message":"Worker process 15004 died. Restarting...","timestamp":"2024-07-25T20:07:29.399Z"}
+{"level":"info","message":"Master process 5392 is running","timestamp":"2024-07-25T20:07:32.115Z"}
+{"level":"info","message":"Worker process 17468 is listening on port 3000","timestamp":"2024-07-25T20:07:36.674Z"}
+{"level":"info","message":"Worker process 14848 is listening on port 3000","timestamp":"2024-07-25T20:07:36.861Z"}
+{"level":"info","message":"Worker process 9144 is listening on port 3000","timestamp":"2024-07-25T20:07:36.882Z"}
+{"level":"info","message":"Worker process 14224 is listening on port 3000","timestamp":"2024-07-25T20:07:37.032Z"}
+{"level":"info","message":"Worker process 14848 died. Restarting...","timestamp":"2024-07-25T20:07:37.236Z"}
+{"level":"info","message":"Worker process 9144 died. Restarting...","timestamp":"2024-07-25T20:07:37.253Z"}
+{"level":"info","message":"Master process 12736 is running","timestamp":"2024-07-25T20:07:41.156Z"}
+{"level":"info","message":"Worker process 16928 is listening on port 3000","timestamp":"2024-07-25T20:07:46.385Z"}
+{"level":"info","message":"Worker process 15336 is listening on port 3000","timestamp":"2024-07-25T20:07:46.393Z"}
+{"level":"info","message":"Worker process 3096 is listening on port 3000","timestamp":"2024-07-25T20:07:46.455Z"}
+{"level":"info","message":"Worker process 10568 is listening on port 3000","timestamp":"2024-07-25T20:07:46.505Z"}
+{"level":"info","message":"Worker process 3096 died. Restarting...","timestamp":"2024-07-25T20:08:23.523Z"}
+{"level":"info","message":"Master process 16572 is running","timestamp":"2024-07-25T20:08:26.716Z"}
+{"level":"info","message":"Worker process 9380 is listening on port 3000","timestamp":"2024-07-25T20:08:32.668Z"}
+{"level":"info","message":"Worker process 8160 is listening on port 3000","timestamp":"2024-07-25T20:08:32.771Z"}
+{"level":"info","message":"Worker process 15800 is listening on port 3000","timestamp":"2024-07-25T20:08:32.819Z"}
+{"level":"info","message":"Worker process 16944 is listening on port 3000","timestamp":"2024-07-25T20:08:32.996Z"}
+{"level":"error","message":"ea","timestamp":"2024-07-25T20:08:33.233Z"}
+{"level":"info","message":"Worker process 9380 died. Restarting...","timestamp":"2024-07-25T20:08:52.847Z"}
+{"level":"info","message":"Master process 15732 is running","timestamp":"2024-07-25T20:08:56.263Z"}
+{"level":"info","message":"Worker process 14584 is listening on port 3000","timestamp":"2024-07-25T20:09:01.247Z"}
+{"level":"info","message":"Worker process 5348 is listening on port 3000","timestamp":"2024-07-25T20:09:01.336Z"}
+{"level":"info","message":"Worker process 14376 is listening on port 3000","timestamp":"2024-07-25T20:09:01.376Z"}
+{"level":"info","message":"Worker process 15404 is listening on port 3000","timestamp":"2024-07-25T20:09:01.376Z"}
+{"level":"info","message":"Worker process 14376 died. Restarting...","timestamp":"2024-07-25T20:09:04.912Z"}
+{"level":"info","message":"Worker process 5348 died. Restarting...","timestamp":"2024-07-25T20:09:04.938Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 14012 is running","timestamp":"2024-07-25T20:09:16.412Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 7156 is listening on port 3000","timestamp":"2024-07-25T20:09:19.864Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 5072 is listening on port 3000","timestamp":"2024-07-25T20:09:19.937Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 9044 is listening on port 3000","timestamp":"2024-07-25T20:09:19.953Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17608 is listening on port 3000","timestamp":"2024-07-25T20:09:20.128Z"}
+{"level":"\u001b[31merror\u001b[39m","message":"ea","timestamp":"2024-07-25T20:09:23.654Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 5072 died. Restarting...","timestamp":"2024-07-25T20:09:51.603Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 15236 is running","timestamp":"2024-07-25T20:09:53.982Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 12884 is listening on port 3000","timestamp":"2024-07-25T20:09:57.892Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 13916 is listening on port 3000","timestamp":"2024-07-25T20:09:57.928Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 14900 is listening on port 3000","timestamp":"2024-07-25T20:09:57.987Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17392 is listening on port 3000","timestamp":"2024-07-25T20:09:58.132Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17392 died. Restarting...","timestamp":"2024-07-25T20:10:01.303Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 12684 is running","timestamp":"2024-07-25T20:10:03.325Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17852 is listening on port 3000","timestamp":"2024-07-25T20:10:07.006Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17316 is listening on port 3000","timestamp":"2024-07-25T20:10:07.024Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 6376 is listening on port 3000","timestamp":"2024-07-25T20:10:07.199Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17496 is listening on port 3000","timestamp":"2024-07-25T20:10:07.266Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17316 died. Restarting...","timestamp":"2024-07-25T20:10:15.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 9304 is running","timestamp":"2024-07-25T20:10:17.571Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 12168 is listening on port 3000","timestamp":"2024-07-25T20:10:22.978Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 14748 is listening on port 3000","timestamp":"2024-07-25T20:10:22.989Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 14808 is listening on port 3000","timestamp":"2024-07-25T20:10:23.088Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 1144 is listening on port 3000","timestamp":"2024-07-25T20:10:23.141Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 14808 died. Restarting...","timestamp":"2024-07-25T20:10:29.377Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 11248 is running","timestamp":"2024-07-25T20:10:31.637Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 10152 died. Restarting...","timestamp":"2024-07-25T20:10:35.921Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 7920 is running","timestamp":"2024-07-25T20:10:38.493Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 16000 is listening on port 3000","timestamp":"2024-07-25T20:10:42.429Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17336 is listening on port 3000","timestamp":"2024-07-25T20:10:42.432Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 16448 is listening on port 3000","timestamp":"2024-07-25T20:10:42.465Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 18028 is listening on port 3000","timestamp":"2024-07-25T20:10:42.498Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17336 died. Restarting...","timestamp":"2024-07-25T20:10:47.490Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 16000 died. Restarting...","timestamp":"2024-07-25T20:10:47.560Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 8276 is running","timestamp":"2024-07-25T20:10:49.549Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 15644 is listening on port 3000","timestamp":"2024-07-25T20:10:54.738Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 14788 is listening on port 3000","timestamp":"2024-07-25T20:10:54.793Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 12168 is running","timestamp":"2024-07-25T20:10:56.698Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 12468 is listening on port 3000","timestamp":"2024-07-25T20:11:00.592Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 16848 is listening on port 3000","timestamp":"2024-07-25T20:11:00.680Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 16280 is listening on port 3000","timestamp":"2024-07-25T20:11:00.688Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 13720 is listening on port 3000","timestamp":"2024-07-25T20:11:00.724Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 18244 is running","timestamp":"2024-07-25T20:11:04.312Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 15244 is listening on port 3000","timestamp":"2024-07-25T20:11:07.156Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 14628 is listening on port 3000","timestamp":"2024-07-25T20:11:07.222Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 10100 is listening on port 3000","timestamp":"2024-07-25T20:11:07.259Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 8688 is listening on port 3000","timestamp":"2024-07-25T20:11:07.268Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 15244 died. Restarting...","timestamp":"2024-07-25T20:11:12.472Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 3560 is running","timestamp":"2024-07-25T20:11:14.885Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 4952 is listening on port 3000","timestamp":"2024-07-25T20:11:19.664Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 9284 is listening on port 3000","timestamp":"2024-07-25T20:11:19.719Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 14596 is listening on port 3000","timestamp":"2024-07-25T20:11:19.800Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 1644 is listening on port 3000","timestamp":"2024-07-25T20:11:19.971Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 6168 is running","timestamp":"2024-07-25T20:11:23.129Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 16648 is running","timestamp":"2024-07-25T20:11:29.860Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 4160 is listening on port 3000","timestamp":"2024-07-25T20:11:34.010Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 13620 is listening on port 3000","timestamp":"2024-07-25T20:11:34.111Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 15396 is listening on port 3000","timestamp":"2024-07-25T20:11:34.137Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 8904 is listening on port 3000","timestamp":"2024-07-25T20:11:34.300Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 4160 died. Restarting...","timestamp":"2024-07-25T20:11:36.744Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 3844 is running","timestamp":"2024-07-25T20:11:38.571Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 15100 is listening on port 3000","timestamp":"2024-07-25T20:11:42.243Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 4940 is listening on port 3000","timestamp":"2024-07-25T20:11:42.263Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 8688 is listening on port 3000","timestamp":"2024-07-25T20:11:42.273Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 15920 is listening on port 3000","timestamp":"2024-07-25T20:11:42.375Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 15100 died. Restarting...","timestamp":"2024-07-25T20:11:55.753Z"}
+{"level":"\u001b[31minfo\u001b[39m","message":"Master process 14788 is running","timestamp":"2024-07-25T20:11:57.752Z"}
+{"level":"\u001b[31minfo\u001b[39m","message":"Worker process 10756 is listening on port 3000","timestamp":"2024-07-25T20:12:02.026Z"}
+{"level":"\u001b[31minfo\u001b[39m","message":"Worker process 10548 is listening on port 3000","timestamp":"2024-07-25T20:12:02.306Z"}
+{"level":"\u001b[31minfo\u001b[39m","message":"Worker process 4948 is listening on port 3000","timestamp":"2024-07-25T20:12:02.387Z"}
+{"level":"\u001b[31minfo\u001b[39m","message":"Worker process 7848 is listening on port 3000","timestamp":"2024-07-25T20:12:02.393Z"}
+{"level":"\u001b[31minfo\u001b[39m","message":"Worker process 10548 died. Restarting...","timestamp":"2024-07-25T20:12:02.611Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Master process 3164 is running","timestamp":"2024-07-25T20:12:04.466Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 13028 is listening on port 3000","timestamp":"2024-07-25T20:12:08.314Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 17812 is listening on port 3000","timestamp":"2024-07-25T20:12:08.353Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 17348 is listening on port 3000","timestamp":"2024-07-25T20:12:08.433Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 13144 is listening on port 3000","timestamp":"2024-07-25T20:12:08.536Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 17348 died. Restarting...","timestamp":"2024-07-25T20:12:16.869Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Master process 14020 is running","timestamp":"2024-07-25T20:12:19.757Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 11904 is listening on port 3001","timestamp":"2024-07-25T20:12:24.802Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 12100 is listening on port 3001","timestamp":"2024-07-25T20:12:24.854Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 8988 is listening on port 3001","timestamp":"2024-07-25T20:12:24.887Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 18204 is listening on port 3001","timestamp":"2024-07-25T20:12:25.009Z"}
+{"level":"\u001b[31merror\u001b[39m","message":"ea","timestamp":"2024-07-25T20:12:56.545Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 12100 died. Restarting...","timestamp":"2024-07-25T20:13:17.535Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 11904 died. Restarting...","timestamp":"2024-07-25T20:13:17.583Z"}
+{"level":"\u001b[34minfo\u001b[39m","message":"Worker process 18204 died. Restarting...","timestamp":"2024-07-25T20:13:17.600Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 12424 is running","timestamp":"2024-07-25T20:13:19.831Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 8380 is listening on port 3000","timestamp":"2024-07-25T20:13:24.038Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 14592 is listening on port 3000","timestamp":"2024-07-25T20:13:24.038Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 17972 is listening on port 3000","timestamp":"2024-07-25T20:13:24.205Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 13176 is listening on port 3000","timestamp":"2024-07-25T20:13:24.316Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 16900 is running","timestamp":"2024-07-25T20:14:02.154Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 12620 is listening on port 3000","timestamp":"2024-07-25T20:14:07.161Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 16092 is listening on port 3000","timestamp":"2024-07-25T20:14:07.262Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 5024 is listening on port 3000","timestamp":"2024-07-25T20:14:07.277Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 12620 died. Restarting...","timestamp":"2024-07-25T20:14:07.347Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Worker process 5024 died. Restarting...","timestamp":"2024-07-25T20:14:07.374Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Master process 9224 is running","timestamp":"2024-07-25T20:14:10.001Z"}

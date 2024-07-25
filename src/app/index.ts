@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.get('/', (_req, res, _next) => {
-  res.send('welcome');
+  res.send('ok');
 });
 
 export default app;

@@ -4,18 +4,19 @@ import app from './app';
 import os from 'os';
 import cluster from 'cluster';
 import portfinder from 'portfinder';
+import logger from './configs/logger';
 
 const numCPUs = os.cpus().length;
 
 if (cluster.isPrimary) {
-  console.log(`Master process ${process.pid} is running`);
+  logger.info(`Master process ${process.pid} is running`);
 
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork();
   }
 
   cluster.on('exit', (worker, _code, _signal) => {
-    console.log(`Worker process ${worker.process.pid} died. Restarting...`);
+    logger.info(`Worker process ${worker.process.pid} died. Restarting...`);
     cluster.fork();
   });
 } else {
@@ -29,12 +30,12 @@ if (cluster.isPrimary) {
     })
     .then((port) => {
       server.listen(port, () => {
-        console.log(
+        logger.info(
           `Worker process ${process.pid} is listening on port ${port}`
         );
       });
     })
     .catch((err) => {
-      console.error(err);
+      logger.error(err);
     });
 }
