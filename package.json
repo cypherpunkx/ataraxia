@@ -43,6 +43,8 @@
     "@types/module-alias": "~2.0.4",
     "@types/morgan": "~1.9.9",
     "@types/node": "^20.14.12",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
     "eslint": "^8.56.0",
     "globals": "^15.8.0",
     "husky": "^9.1.2",
