@@ -1,5 +1,5 @@
-import 'dotenv/config';
 import http from 'http';
+import configs from './configs';
 import app from './app';
 import os from 'os';
 import cluster from 'cluster';
@@ -25,8 +25,8 @@ if (cluster.isPrimary) {
   portfinder.setBasePort(3000);
   portfinder
     .getPortPromise({
-      host: process.env.HOST,
-      port: +process.env.PORT!,
+      host: configs.HOST,
+      port: configs.PORT,
     })
     .then((port) => {
       server.listen(port, () => {

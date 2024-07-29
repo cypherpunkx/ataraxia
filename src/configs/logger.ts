@@ -10,10 +10,24 @@ const logLevels = {
   warn: 2,
   info: 3,
   debug: 4,
-  trace: 5,
+  sql: 5,
 };
 
+const logColors = {
+  colors: {
+    fatal: 'red',
+    error: 'red',
+    warn: 'yellow',
+    info: 'green',
+    debug: 'blue',
+    sql: 'cyan',
+  },
+};
+
+winston.addColors(logColors.colors);
+
 const fileRotateTransport = new winston.transports.DailyRotateFile({
+  dirname: 'logs',
   filename: 'combined-%DATE%.log',
   datePattern: 'YYYY-MM-DD',
   maxFiles: '14d',
@@ -22,12 +36,12 @@ const fileRotateTransport = new winston.transports.DailyRotateFile({
 const consoleTransport = new winston.transports.Console({
   format: combine(
     timestamp({ format: 'YYYY-MM-DD hh:mm:ss.SSS A' }),
-    colorize(),
-    printf(
-      (info) =>
-        `[${chalk.yellow(info.timestamp)}] ${info.level}: ${info.message}`
-    )
+    colorize({ all: true }),
+    printf((info) => {
+      return `[${chalk.yellow(info.timestamp)}] ${info.level}: ${info.message}`;
+    })
   ),
+  level: 'sql',
 });
 
 const logger = winston.createLogger({
@@ -36,10 +50,13 @@ const logger = winston.createLogger({
   format: combine(timestamp(), colorize(), json()),
   transports: [consoleTransport, fileRotateTransport],
   exceptionHandlers: [
-    new winston.transports.File({ filename: 'exception.log' }),
+    new winston.transports.File({ dirname: 'logs', filename: 'exception.log' }),
   ],
   rejectionHandlers: [
-    new winston.transports.File({ filename: 'rejections.log' }),
+    new winston.transports.File({
+      dirname: 'logs',
+      filename: 'rejections.log',
+    }),
   ],
 });
 

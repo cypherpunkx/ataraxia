@@ -55,6 +55,7 @@ module.exports = {
         format: ['camelCase', 'PascalCase'],
       },
     ],
+    indent: ['error', 2, { SwitchCase: 1 }],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -67,5 +68,6 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
+    '@typescript-eslint/no-explicit-any': 'warn',
   },
 };
