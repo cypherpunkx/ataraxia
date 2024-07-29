@@ -1,7 +1,11 @@
 import { Unauthorized } from 'http-errors';
 import UserRepository from '@/app/repositories/user.repository';
 import { loginMessages } from '@/constants';
-import AuthSchema, { LoginSchema, RegisterSchema } from '@/models/auth.model';
+import AuthSchema, {
+  LoginSchema,
+  ProfileSchema,
+  RegisterSchema,
+} from '@/models/auth.model';
 import { verifyPassword } from '@/utils/security';
 import Validator from '@/utils/validator';
 import jwt from 'jsonwebtoken';
@@ -11,6 +15,8 @@ class AuthService {
   constructor(private _repository: UserRepository) {
     this.register = this.register.bind(this);
     this.login = this.login.bind(this);
+    this.getUserDetails = this.getUserDetails.bind(this);
+    this.editUserDetails = this.editUserDetails.bind(this);
   }
 
   async register(payload: RegisterSchema) {
@@ -54,6 +60,20 @@ class AuthService {
     };
 
     return response;
+  }
+
+  async getUserDetails(username: string) {
+    const user = await this._repository.getByUsernameDetails(username);
+
+    return user;
+  }
+
+  async editUserDetails(username: string, payload: ProfileSchema) {
+    payload = Validator.validate(AuthSchema.Profile, payload);
+
+    const result = await this._repository.edit(username, payload);
+
+    return result;
   }
 }
 
