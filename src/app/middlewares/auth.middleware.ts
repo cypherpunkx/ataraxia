@@ -9,7 +9,7 @@ function errorMiddleware(req: Request, _res: Response, next: NextFunction) {
       req.headers['authorization'] &&
       req.headers['authorization'].split(' ')[1];
 
-    if (authHeaders) {
+    if (!authHeaders) {
       throw Unauthorized('Authentication is required');
     }
 

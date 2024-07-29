@@ -24,7 +24,6 @@ enum Role {
 
 class AuthSchema {
   static Register = object({
-    name: pipe(string('Name must be string.'), nonEmpty('Name is required.')),
     username: pipe(
       string('Username must be string'),
       nonEmpty('Name is required.')
@@ -64,42 +63,6 @@ class AuthSchema {
         return hashedPassword;
       })
     ),
-    email: pipe(
-      string('Email must be string.'),
-      nonEmpty('Password is required'),
-      email('Email is invalid')
-    ),
-    address: pipe(
-      string('Address must be string.'),
-      nonEmpty('Password is required')
-    ),
-    age: number('Age must be number'),
-    birthdate: pipe(
-      string('Birthdate must be string.'),
-      nonEmpty('Birthdate is required'),
-      custom<string>((input) => {
-        const regex =
-          /^(?:19|20)\d\d-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])|(?:0[1-9]|1[0-9]|2[0-8])-(?:02)|(?:29-02-(?:19|20)\d\d))$/;
-
-        return regex.test(input as string);
-      }, 'Invalid date format. Please use YYYY-MM-DD.'),
-      transform((input) => new Date(input)),
-      date('Invalid date format'),
-      transform((input) => {
-        const year = new Intl.DateTimeFormat('en', {
-          year: 'numeric',
-        }).format(input);
-        const month = new Intl.DateTimeFormat('en', {
-          month: '2-digit',
-        }).format(input);
-        const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(
-          input
-        );
-
-        return `${year}-${month}-${day}`;
-      })
-    ),
-    avatar: optional(string('Avatar must be string')),
     role: optional(
       pipe(
         string('Role must be string'),
@@ -118,9 +81,56 @@ class AuthSchema {
       nonEmpty('Password is required')
     ),
   });
+
+  static Profile = object({
+    name: pipe(string('Name must be string.'), nonEmpty('Name is required.')),
+
+    username: optional(pick(this.Register, ['username']).entries.username),
+
+    email: optional(
+      pipe(
+        string('Email must be string.'),
+        nonEmpty('Email is required'),
+        email('Email is invalid')
+      )
+    ),
+    address: optional(
+      pipe(string('Address must be string.'), nonEmpty('Address is required'))
+    ),
+    age: optional(number('Age must be number')),
+    birthdate: optional(
+      pipe(
+        string('Birthdate must be string.'),
+        nonEmpty('Birthdate is required'),
+        custom<string>((input) => {
+          const regex =
+            /^(?:19|20)\d\d-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])|(?:0[1-9]|1[0-9]|2[0-8])-(?:02)|(?:29-02-(?:19|20)\d\d))$/;
+
+          return regex.test(input as string);
+        }, 'Invalid date format. Please use YYYY-MM-DD.'),
+        transform((input) => new Date(input)),
+        date('Invalid date format'),
+        transform((input) => {
+          const year = new Intl.DateTimeFormat('en', {
+            year: 'numeric',
+          }).format(input);
+          const month = new Intl.DateTimeFormat('en', {
+            month: '2-digit',
+          }).format(input);
+          const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(
+            input
+          );
+
+          return `${year}-${month}-${day}`;
+        })
+      )
+    ),
+    avatar: optional(string('Avatar must be string')),
+  });
 }
 
 export type RegisterSchema = InferOutput<typeof AuthSchema.Register>;
 export type LoginSchema = InferOutput<typeof AuthSchema.Login>;
+export type ProfileSchema = InferOutput<typeof AuthSchema.Profile>;
 
 export default AuthSchema;
