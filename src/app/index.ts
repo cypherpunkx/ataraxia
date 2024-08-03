@@ -6,7 +6,6 @@ import compression from 'compression';
 import helmet from 'helmet';
 import authRoute from '@/app/routes/auth.route';
 import errorMiddleware from './middlewares/error.middleware';
-
 const app = express();
 
 app.use(compression());
@@ -17,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use('/auth', authRoute);
+// app.use('/psycholog')
 app.use(errorMiddleware);
 
 export default app;

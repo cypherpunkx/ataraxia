@@ -2,7 +2,8 @@ import winston from 'winston';
 import chalk from 'chalk';
 import 'winston-daily-rotate-file';
 
-const { combine, timestamp, printf, json, colorize } = winston.format;
+const { combine, timestamp, printf, json, colorize, prettyPrint } =
+  winston.format;
 
 const logLevels = {
   fatal: 0,
@@ -47,7 +48,7 @@ const consoleTransport = new winston.transports.Console({
 const logger = winston.createLogger({
   levels: logLevels,
   level: process.env.LOG_LEVEL || 'info',
-  format: combine(timestamp(), colorize(), json()),
+  format: combine(timestamp(), prettyPrint({ colorize: true }), json()),
   transports: [consoleTransport, fileRotateTransport],
   exceptionHandlers: [
     new winston.transports.File({ dirname: 'logs', filename: 'exception.log' }),
