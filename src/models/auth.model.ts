@@ -70,7 +70,10 @@ class AuthSchema {
       )
     ),
     status: optional(
-      pipe(number(), picklist([0, 1], 'Status must be either 0 or 1.'))
+      pipe(
+        number('status must be number'),
+        picklist([0, 1], 'Status must be either 0 or 1.')
+      )
     ),
   });
 
@@ -83,7 +86,7 @@ class AuthSchema {
   });
 
   static Profile = object({
-    name: pipe(string('Name must be string.'), nonEmpty('Name is required.')),
+    name: string('Name must be string.'),
 
     username: optional(pick(this.Register, ['username']).entries.username),
 
@@ -94,9 +97,7 @@ class AuthSchema {
         email('Email is invalid')
       )
     ),
-    address: optional(
-      pipe(string('Address must be string.'), nonEmpty('Address is required'))
-    ),
+    address: optional(string('Address must be string.')),
     age: optional(number('Age must be number')),
     birthdate: optional(
       pipe(
@@ -127,10 +128,18 @@ class AuthSchema {
     ),
     avatar: optional(string('Avatar must be string')),
   });
+
+  static RefreshToken = object({
+    refreshToken: pipe(
+      string('Token must be string'),
+      nonEmpty('Token is required')
+    ),
+  });
 }
 
 export type RegisterSchema = InferOutput<typeof AuthSchema.Register>;
 export type LoginSchema = InferOutput<typeof AuthSchema.Login>;
 export type ProfileSchema = InferOutput<typeof AuthSchema.Profile>;
+export type RefreshTokenSchema = InferOutput<typeof AuthSchema.RefreshToken>;
 
 export default AuthSchema;

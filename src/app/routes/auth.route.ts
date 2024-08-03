@@ -13,6 +13,7 @@ const controller = new AuthController(service);
 
 router.post('/register', controller.registerNewUser);
 router.post('/login', controller.loginUser);
+router.post('/refresh/token', auth, controller.refreshToken);
 router.get('/profile', auth, controller.getProfile);
 router.put('/profile/edit', auth, controller.editProfile);
 

@@ -6,6 +6,7 @@ import {
   RegisterSchema,
   LoginSchema,
   ProfileSchema,
+  RefreshTokenSchema,
 } from '@/models/auth.model';
 import { ResultSetHeader } from 'mysql2';
 import { JwtPayload } from 'jsonwebtoken';
@@ -16,6 +17,7 @@ class AuthController {
     this.loginUser = this.loginUser.bind(this);
     this.getProfile = this.getProfile.bind(this);
     this.editProfile = this.editProfile.bind(this);
+    this.refreshToken = this.refreshToken.bind(this);
   }
 
   async registerNewUser(req: Request, res: Response, next: NextFunction) {
@@ -116,6 +118,26 @@ class AuthController {
           statusCode: StatusCodes.OK,
           status: 'success',
           message: 'Edit Profile',
+          data: result,
+        },
+        res
+      );
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async refreshToken(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { refreshToken } = req.body as RefreshTokenSchema;
+
+      const result = await this._service.refresh(refreshToken);
+
+      return sendResponse(
+        {
+          statusCode: StatusCodes.OK,
+          status: 'success',
+          message: 'Refresh token successfully',
           data: result,
         },
         res

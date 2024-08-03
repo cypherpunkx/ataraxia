@@ -6,9 +6,15 @@ import AuthSchema, {
   ProfileSchema,
   RegisterSchema,
 } from '@/models/auth.model';
-import { verifyPassword } from '@/utils/security';
+import {
+  generateAccessToken,
+  generateRefreshToken,
+  REFRESH_TOKENS,
+  verifyPassword,
+} from '@/utils/security';
 import Validator from '@/utils/validator';
-import jwt from 'jsonwebtoken';
+import { Forbidden } from 'http-errors';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 import configs from '@/configs';
 
 class AuthService {
@@ -46,12 +52,12 @@ class AuthService {
       throw Unauthorized(loginMessages.invalidUsernamePassword);
     }
 
-    const token = jwt.sign({ data: payload.username }, configs.SECRET, {
-      expiresIn: '1h',
-    });
+    const token = generateAccessToken(payload.username);
+    const refreshToken = generateRefreshToken(payload.username);
 
     const response = {
       token,
+      refreshToken,
       expiresIn: 1000 * 60 * 60 * 24, // Token expiry time in seconds
       user: {
         id: user.id,
@@ -74,6 +80,24 @@ class AuthService {
     const result = await this._repository.edit(username, payload);
 
     return result;
+  }
+
+  async refresh(token: string) {
+    if (!token || !REFRESH_TOKENS.has(token)) {
+      throw Forbidden('Forbidden');
+    }
+
+    const claims = jwt.verify(token, configs.SECRET) as JwtPayload & {
+      data: string;
+    };
+
+    const refreshToken = generateAccessToken(claims.data);
+
+    const response = {
+      refreshToken,
+    };
+
+    return response;
   }
 }
 
