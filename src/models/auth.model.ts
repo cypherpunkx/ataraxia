@@ -84,9 +84,7 @@ class AuthSchema {
 
   static Profile = object({
     name: pipe(string('Name must be string.'), nonEmpty('Name is required.')),
-
     username: optional(pick(this.Register, ['username']).entries.username),
-
     email: optional(
       pipe(
         string('Email must be string.'),
@@ -97,7 +95,13 @@ class AuthSchema {
     address: optional(
       pipe(string('Address must be string.'), nonEmpty('Address is required'))
     ),
-    age: optional(number('Age must be number')),
+    age: optional(
+      pipe(
+        string('Age must be string'),
+        transform((input) => parseInt(input, 10)),
+        number('Age must be number')
+      )
+    ),
     birthdate: optional(
       pipe(
         string('Birthdate must be string.'),
@@ -126,6 +130,15 @@ class AuthSchema {
       )
     ),
     avatar: optional(string('Avatar must be string')),
+    file: optional(
+      object({
+        originalName: string('Original Name must be string'),
+        name: string('Name must be string'),
+        path: string('Path must be string'),
+        type: string('Type must be string'),
+        size: number('Size must be number'),
+      })
+    ),
   });
 }
 

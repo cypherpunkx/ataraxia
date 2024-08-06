@@ -10,7 +10,7 @@ import { verifyPassword } from '@/utils/security';
 import Validator from '@/utils/validator';
 import jwt from 'jsonwebtoken';
 import configs from '@/configs';
-
+import {} from 'http-errors';
 class AuthService {
   constructor(private _repository: UserRepository) {
     this.register = this.register.bind(this);
@@ -47,7 +47,7 @@ class AuthService {
     }
 
     const token = jwt.sign({ data: payload.username }, configs.SECRET, {
-      expiresIn: '1h',
+      expiresIn: '8h',
     });
 
     const response = {
@@ -65,11 +65,42 @@ class AuthService {
   async getUserDetails(username: string) {
     const user = await this._repository.getByUsernameDetails(username);
 
-    return user;
+    if (!user) return null;
+
+    const response = {
+      name: user.name,
+      username: user.username,
+      email: user.email,
+      address: user.address,
+      age: user.age,
+      birthdate: user.birthdate,
+      avatar: user.avatar,
+    };
+
+    return response;
   }
 
-  async editUserDetails(username: string, payload: ProfileSchema) {
+  async editUserDetails(
+    username: string,
+    payload: ProfileSchema,
+    file: Express.Multer.File
+  ) {
     payload = Validator.validate(AuthSchema.Profile, payload);
+    payload.file = { originalName: '', name: '', path: '', size: 0, type: '' };
+
+    if (file) {
+      const type = file.mimetype.split('/')[1];
+
+      payload.file.originalName = file.originalname;
+      payload.file.name = file.filename;
+      payload.file.path = file.path;
+      payload.file.type = type;
+      payload.file.size = file.size;
+
+      const result = await this._repository.editWithImage(username, payload);
+
+      return result;
+    }
 
     const result = await this._repository.edit(username, payload);
 
