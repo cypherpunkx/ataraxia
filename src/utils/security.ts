@@ -1,4 +1,8 @@
+import configs from '@/configs';
 import crypto from 'crypto';
+import jwt from 'jsonwebtoken';
+
+export const REFRESH_TOKENS = new Map();
 
 function hashPassword(
   password: string,
@@ -21,4 +25,23 @@ function verifyPassword(password: string, hash: string, salt: string) {
   return hashedPassword === hash;
 }
 
-export { hashPassword, verifyPassword };
+function generateAccessToken(username: string) {
+  return jwt.sign({ data: username }, configs.SECRET, {
+    expiresIn: '1h',
+  });
+}
+
+function generateRefreshToken(username: string) {
+  const refreshToken = jwt.sign({ data: username }, configs.SECRET, {
+    expiresIn: '7d',
+  });
+  REFRESH_TOKENS.set(refreshToken, username);
+  return refreshToken;
+}
+
+export {
+  hashPassword,
+  verifyPassword,
+  generateAccessToken,
+  generateRefreshToken,
+};

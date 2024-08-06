@@ -70,7 +70,10 @@ class AuthSchema {
       )
     ),
     status: optional(
-      pipe(number(), picklist([0, 1], 'Status must be either 0 or 1.'))
+      pipe(
+        number('status must be number'),
+        picklist([0, 1], 'Status must be either 0 or 1.')
+      )
     ),
   });
 
@@ -140,10 +143,18 @@ class AuthSchema {
       })
     ),
   });
+
+  static RefreshToken = object({
+    refreshToken: pipe(
+      string('Token must be string'),
+      nonEmpty('Token is required')
+    ),
+  });
 }
 
 export type RegisterSchema = InferOutput<typeof AuthSchema.Register>;
 export type LoginSchema = InferOutput<typeof AuthSchema.Login>;
 export type ProfileSchema = InferOutput<typeof AuthSchema.Profile>;
+export type RefreshTokenSchema = InferOutput<typeof AuthSchema.RefreshToken>;
 
 export default AuthSchema;
