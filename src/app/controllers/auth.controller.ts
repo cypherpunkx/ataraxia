@@ -10,7 +10,6 @@ import {
 } from '@/models/auth.model';
 import { ResultSetHeader } from 'mysql2';
 import { JwtPayload } from 'jsonwebtoken';
-
 class AuthController {
   constructor(private _service: AuthService) {
     this.registerNewUser = this.registerNewUser.bind(this);
@@ -99,8 +98,10 @@ class AuthController {
         data: string;
       };
 
-      const { name, email, address, age, birthdate, avatar } =
+      const { name, email, address, age, birthdate } =
         req.body as ProfileSchema;
+
+      const file = req.file;
 
       const payload: ProfileSchema = {
         name,
@@ -108,10 +109,13 @@ class AuthController {
         address,
         age,
         birthdate,
-        avatar,
       };
 
-      const result = await this._service.editUserDetails(claims.data, payload);
+      const result = await this._service.editUserDetails(
+        claims.data,
+        payload,
+        file!
+      );
 
       return sendResponse(
         {
