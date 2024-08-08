@@ -11,6 +11,12 @@ import {
 } from '@/models/auth.model';
 import { ResultSetHeader } from 'mysql2';
 import { JwtPayload } from 'jsonwebtoken';
+import {
+  accountSettingsMessages,
+  loginMessages,
+  passwordResetMessages,
+  registrationMessages,
+} from '@/constants';
 class AuthController {
   constructor(private _service: AuthService) {
     this.registerNewUser = this.registerNewUser.bind(this);
@@ -37,7 +43,7 @@ class AuthController {
         {
           statusCode: StatusCodes.OK,
           status: 'success',
-          message: 'Register successfully',
+          message: registrationMessages.success,
           data: (result as ResultSetHeader).affectedRows,
         },
         res
@@ -62,7 +68,7 @@ class AuthController {
         {
           statusCode: StatusCodes.OK,
           status: 'success',
-          message: 'Login successfully',
+          message: loginMessages.success,
           data: result,
         },
         res
@@ -123,7 +129,7 @@ class AuthController {
         {
           statusCode: StatusCodes.OK,
           status: 'success',
-          message: 'Profile updated',
+          message: accountSettingsMessages.updateSuccess,
           data: result,
         },
         res
@@ -173,7 +179,7 @@ class AuthController {
         {
           statusCode: StatusCodes.OK,
           status: 'success',
-          message: 'Change password successfully',
+          message: passwordResetMessages.passwordUpdated,
           data: result,
         },
         res

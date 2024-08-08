@@ -131,10 +131,10 @@ class UserRepository {
   }
 
   async getByUsername(username: string) {
-    const query = 'SELECT id,salt,hash FROM users WHERE username = ? LIMIT 1';
+    const query = 'SELECT * FROM users WHERE username = ? LIMIT 1';
     const { rows } = await queryWithLogging(this._db, query, [username]);
 
-    const [data] = rows as Array<{ id: number; salt: string; hash: string }>;
+    const [data] = rows as any[];
 
     return data;
   }
