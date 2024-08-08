@@ -1,7 +1,9 @@
 /node_modules
 .env
 logs/**/*
+!logs/**/.gitkeep
 /uploads/**
+!/uploads/**/.gitkeep
 *.tmp
 /build/
 .vscode/
