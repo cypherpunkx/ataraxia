@@ -7,6 +7,7 @@ import {
   LoginSchema,
   ProfileSchema,
   RefreshTokenSchema,
+  ChangePasswordSchema,
 } from '@/models/auth.model';
 import { ResultSetHeader } from 'mysql2';
 import { JwtPayload } from 'jsonwebtoken';
@@ -17,6 +18,7 @@ class AuthController {
     this.getProfile = this.getProfile.bind(this);
     this.editProfile = this.editProfile.bind(this);
     this.refreshToken = this.refreshToken.bind(this);
+    this.changeUserPassword = this.changeUserPassword.bind(this);
   }
 
   async registerNewUser(req: Request, res: Response, next: NextFunction) {
@@ -35,7 +37,7 @@ class AuthController {
         {
           statusCode: StatusCodes.OK,
           status: 'success',
-          message: 'Register successful',
+          message: 'Register successfully',
           data: (result as ResultSetHeader).affectedRows,
         },
         res
@@ -60,7 +62,7 @@ class AuthController {
         {
           statusCode: StatusCodes.OK,
           status: 'success',
-          message: 'Login successful',
+          message: 'Login successfully',
           data: result,
         },
         res
@@ -121,7 +123,7 @@ class AuthController {
         {
           statusCode: StatusCodes.OK,
           status: 'success',
-          message: 'Edit Profile',
+          message: 'Profile updated',
           data: result,
         },
         res
@@ -142,6 +144,36 @@ class AuthController {
           statusCode: StatusCodes.OK,
           status: 'success',
           message: 'Refresh token successfully',
+          data: result,
+        },
+        res
+      );
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async changeUserPassword(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { oldPassword, confirmPassword, newPassword } =
+        req.body as ChangePasswordSchema;
+      const claims = req.user as JwtPayload & {
+        data: string;
+      };
+
+      const payload: ChangePasswordSchema = {
+        oldPassword,
+        newPassword,
+        confirmPassword,
+      };
+
+      const result = await this._service.changePassword(payload, claims.data);
+
+      return sendResponse(
+        {
+          statusCode: StatusCodes.OK,
+          status: 'success',
+          message: 'Change password successfully',
           data: result,
         },
         res

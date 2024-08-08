@@ -6,6 +6,9 @@ const loginMessages = {
     'Password is incorrect. Please make sure your password is correct.',
   invalidUsernamePassword:
     'Username or Password is incorrect. Please make sure your username or password is correct.',
+  invalidConfirmPassword: 'Passwords do not match.',
+  invalidNewPassword:
+    'New password cannot be the same as the previous password.',
 };
 
 const registrationMessages = {
