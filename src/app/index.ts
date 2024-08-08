@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use('/auth', authRoute);
-// app.use('/psycholog')
 app.use(errorMiddleware);
 
 export default app;

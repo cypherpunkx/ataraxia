@@ -1,6 +1,6 @@
 import { Unauthorized } from 'http-errors';
 import UserRepository from '@/app/repositories/user.repository';
-import { loginMessages } from '@/constants';
+import { loginMessages, registrationMessages } from '@/constants';
 import AuthSchema, {
   ChangePasswordSchema,
   LoginSchema,
@@ -31,6 +31,12 @@ class AuthService {
 
   async register(payload: RegisterSchema) {
     payload = Validator.validate(AuthSchema.Register, payload);
+
+    const user = await this._repository.getByUsername(payload.username);
+
+    if (user) {
+      throw Unauthorized(registrationMessages.usernameTaken);
+    }
 
     const affectedRows = await this._repository.create(payload);
 
