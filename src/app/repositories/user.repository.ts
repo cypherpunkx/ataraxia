@@ -7,8 +7,12 @@ class UserRepository {
     this.create = this.create.bind(this);
     this.getByUsername = this.getByUsername.bind(this);
     this.getByUsernameDetails = this.getByUsernameDetails.bind(this);
+    this.getByUsernameAvatar = this.getByUsernameAvatar.bind(this);
+    this.getByUsernameAvatarDetails =
+      this.getByUsernameAvatarDetails.bind(this);
     this.editWithImage = this.editWithImage.bind(this);
     this.edit = this.edit.bind(this);
+    this.editPassword = this.editPassword.bind(this);
     this.find = this.find.bind(this);
   }
 
@@ -45,6 +49,19 @@ class UserRepository {
     );
 
     return result;
+  }
+
+  async editPassword(salt: string, hash: string, username: string) {
+    const queryEditPassword =
+      'UPDATE users SET hash = ?, salt = ? WHERE username = ?';
+
+    const { rows } = await queryWithLogging(this._db, queryEditPassword, [
+      salt,
+      hash,
+      username,
+    ]);
+
+    return rows;
   }
 
   async editWithImage(username: string, payload: ProfileSchema) {
@@ -162,6 +179,7 @@ class UserRepository {
   async find() {
     const query = 'SELECT * FROM users';
     const { rows } = await queryWithLogging(this._db, query);
+
     return rows;
   }
 }

@@ -2,6 +2,7 @@ import { Unauthorized } from 'http-errors';
 import UserRepository from '@/app/repositories/user.repository';
 import { loginMessages } from '@/constants';
 import AuthSchema, {
+  ChangePasswordSchema,
   LoginSchema,
   ProfileSchema,
   RegisterSchema,
@@ -9,6 +10,7 @@ import AuthSchema, {
 import {
   generateAccessToken,
   generateRefreshToken,
+  hashPassword,
   REFRESH_TOKENS,
   verifyPassword,
 } from '@/utils/security';
@@ -23,6 +25,8 @@ class AuthService {
     this.login = this.login.bind(this);
     this.getUserDetails = this.getUserDetails.bind(this);
     this.editUserDetails = this.editUserDetails.bind(this);
+    this.refresh = this.refresh.bind(this);
+    this.changePassword = this.changePassword.bind(this);
   }
 
   async register(payload: RegisterSchema) {
@@ -129,6 +133,40 @@ class AuthService {
     };
 
     return response;
+  }
+
+  async changePassword(payload: ChangePasswordSchema, username: string) {
+    payload = Validator.validate(AuthSchema.ChangePassword, payload);
+
+    const oldPassword = await this._repository.getByUsername(username);
+
+    if (!oldPassword) {
+      throw Unauthorized(loginMessages.invalidUsernamePassword);
+    }
+
+    const isValidPassword = verifyPassword(
+      payload.oldPassword,
+      oldPassword.hash,
+      oldPassword.salt
+    );
+
+    if (!isValidPassword) {
+      throw Unauthorized(loginMessages.invalidUsernamePassword);
+    }
+
+    if (payload.newPassword !== payload.confirmPassword) {
+      throw Unauthorized(loginMessages.invalidConfirmPassword);
+    }
+
+    if (payload.oldPassword === payload.newPassword) {
+      throw Unauthorized(loginMessages.invalidNewPassword);
+    }
+
+    const { hash, salt } = hashPassword(payload.newPassword);
+
+    const result = await this._repository.editPassword(hash, salt, username);
+
+    return result;
   }
 }
 

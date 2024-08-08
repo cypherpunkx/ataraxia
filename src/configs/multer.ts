@@ -7,7 +7,9 @@ import logger from './logger';
 // Konfigurasi Multer
 const storage = multer.diskStorage({
   destination: function (_req, _file, cb) {
-    const dirName = new Date().toISOString().split('T')[0];
+    const now = new Date().toISOString();
+    const dirName = now.split('T')[0];
+
     const dirPath = path.join(process.cwd(), 'src', 'uploads', dirName);
 
     fs.mkdir(dirPath, { recursive: true }, (err, path) => {

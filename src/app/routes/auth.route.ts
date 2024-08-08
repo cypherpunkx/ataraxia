@@ -14,7 +14,8 @@ const controller = new AuthController(service);
 
 router.post('/register', controller.registerNewUser);
 router.post('/login', controller.loginUser);
-router.post('/refresh/token', auth, controller.refreshToken);
+router.post('/token/refresh', auth, controller.refreshToken);
+router.post('/password/change', auth, controller.changeUserPassword);
 router.get('/profile', auth, controller.getProfile);
 router.put(
   '/profile/edit',
