@@ -18,7 +18,8 @@ import Validator from '@/utils/validator';
 import { Forbidden } from 'http-errors';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import configs from '@/configs';
-import {} from 'http-errors';
+import email from '@/configs/mailer';
+
 class AuthService {
   constructor(private _repository: UserRepository) {
     this.register = this.register.bind(this);
@@ -74,6 +75,11 @@ class AuthService {
         username: payload.username,
       },
     };
+
+    await email.sendEmail({
+      from: 'kryptonx1x3@gmail.com',
+      to: 'akagaminoshanks0021@gmail.com',
+    });
 
     return response;
   }

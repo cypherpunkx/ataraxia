@@ -39,9 +39,14 @@ function generateRefreshToken(username: string) {
   return refreshToken;
 }
 
+function generateOTP(): number {
+  return Math.floor(100000 + Math.random() * 900000);
+}
+
 export {
   hashPassword,
   verifyPassword,
   generateAccessToken,
   generateRefreshToken,
+  generateOTP,
 };
