@@ -10,4 +10,6 @@ export default {
   DB_PORT: process.env.DB_PORT || 3306,
   DB_NAME: process.env.DB_NAME,
   SECRET: process.env.SECRET || 'secret',
+  EMAIL_USER: process.env.EMAIL_USER || '',
+  EMAIL_PASS: process.env.EMAIL_PASS || '',
 };

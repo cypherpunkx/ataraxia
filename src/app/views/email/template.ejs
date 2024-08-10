@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f7;
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+        }
+        table {
+            border-spacing: 0;
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+        }
+        .email-wrapper {
+            width: 100%;
+            background-color: #f4f4f7;
+            padding: 20px;
+        }
+        .email-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        /* Header */
+        .email-header {
+            background-color: #4a90e2;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* Body */
+        .email-body {
+            padding: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555555;
+        }
+        .email-body h1 {
+            font-size: 22px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .email-body p {
+            margin-bottom: 20px;
+        }
+        .email-body a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .email-body .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: #ffffff;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        /* Footer */
+        .email-footer {
+            background-color: #f4f4f7;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #888888;
+        }
+        .email-footer p {
+            margin: 0;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <table class="email-content">
+            <!-- Header -->
+            <tr>
+                <td class="email-header">
+                    <%= header %>
+                </td>
+            </tr>
+            <!-- Body -->
+            <tr>
+                <td class="email-body">
+                    <h1><%= title %></h1>
+                    <p><%= body %></p>
+                    <% if (buttonText) { %>
+                        <a href="<%= buttonUrl %>" class="btn"><%= buttonText %></a>
+                    <% } %>
+                </td>
+            </tr>
+            <!-- Footer -->
+            <tr>
+                <td class="email-footer">
+                    <%= footer %>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
