@@ -9,7 +9,7 @@ import logger from './configs/logger';
 const numCPUs = os.cpus().length;
 
 if (cluster.isPrimary) {
-  logger.info(`Master process ${process.pid} is running`);
+  logger.debug(`Master process ${process.pid} is running`);
 
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork();

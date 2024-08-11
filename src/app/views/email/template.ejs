@@ -92,7 +92,7 @@
             <!-- Header -->
             <tr>
                 <td class="email-header">
-                    <%= header %>
+                    <%- include('partials/header',{ header }) %>
                 </td>
             </tr>
             <!-- Body -->
@@ -108,7 +108,7 @@
             <!-- Footer -->
             <tr>
                 <td class="email-footer">
-                    <%= footer %>
+                    <%- include('partials/footer',{ footer }) %>
                 </td>
             </tr>
         </table>

@@ -5,12 +5,14 @@ import AuthService from '@/app/services/auth.service';
 import AuthController from '@/app/controllers/auth.controller';
 import auth from '@/app/middlewares/auth.middleware';
 import upload from '@/configs/multer';
+import MailService from '../services/mail.service';
 
 const router = express.Router();
 
 const repository = new UserRepository(db);
 const authService = new AuthService(repository);
-const controller = new AuthController(authService);
+const mailService = new MailService();
+const controller = new AuthController(authService, mailService);
 
 router.post('/register', controller.registerNewUser);
 router.post('/login', controller.loginUser);
