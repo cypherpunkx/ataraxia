@@ -6,9 +6,10 @@ import compression from 'compression';
 import helmet from 'helmet';
 import authRoute from '@/app/routes/auth.route';
 import errorMiddleware from './middlewares/error.middleware';
-import { verifyMailConnection } from '@/configs/mailer';
+import { testingEmail, verifyMailConnection } from '@/configs/mailer';
 
 verifyMailConnection();
+testingEmail();
 
 const app = express();
 

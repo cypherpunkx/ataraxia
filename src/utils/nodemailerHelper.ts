@@ -11,7 +11,9 @@ async function renderTemplate(
     path.join(process.cwd(), templatePath),
     'utf8'
   );
-  return ejs.render(template, context);
+  return ejs.render(template, context, {
+    filename: path.join(process.cwd(), templatePath),
+  });
 }
 
 export { renderTemplate };

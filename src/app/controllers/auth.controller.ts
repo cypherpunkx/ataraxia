@@ -17,9 +17,13 @@ import {
   passwordResetMessages,
   registrationMessages,
 } from '@/constants';
+import MailService from '../services/mail.service';
 
 class AuthController {
-  constructor(private _authService: AuthService) {
+  constructor(
+    private _authService: AuthService,
+    private _mailService: MailService
+  ) {
     this.registerNewUser = this.registerNewUser.bind(this);
     this.loginUser = this.loginUser.bind(this);
     this.getProfile = this.getProfile.bind(this);
@@ -86,6 +90,10 @@ class AuthController {
       };
 
       const result = await this._authService.getUserDetails(claims.data);
+
+      await this._mailService.sendEmail({
+        to: 'littleeyes17@gmail.com',
+      });
 
       return sendResponse(
         {
