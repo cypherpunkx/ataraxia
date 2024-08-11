@@ -9,8 +9,8 @@ import upload from '@/configs/multer';
 const router = express.Router();
 
 const repository = new UserRepository(db);
-const service = new AuthService(repository);
-const controller = new AuthController(service);
+const authService = new AuthService(repository);
+const controller = new AuthController(authService);
 
 router.post('/register', controller.registerNewUser);
 router.post('/login', controller.loginUser);

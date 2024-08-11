@@ -15,10 +15,9 @@ import {
   verifyPassword,
 } from '@/utils/security';
 import Validator from '@/utils/validator';
-import { Forbidden } from 'http-errors';
+import { Forbidden, BadRequest } from 'http-errors';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import configs from '@/configs';
-import email from '@/configs/mailer';
 
 class AuthService {
   constructor(private _repository: UserRepository) {
@@ -75,11 +74,6 @@ class AuthService {
         username: payload.username,
       },
     };
-
-    await email.sendEmail({
-      from: 'kryptonx1x3@gmail.com',
-      to: 'akagaminoshanks0021@gmail.com',
-    });
 
     return response;
   }
@@ -167,11 +161,11 @@ class AuthService {
     }
 
     if (payload.newPassword !== payload.confirmPassword) {
-      throw Unauthorized(loginMessages.invalidConfirmPassword);
+      throw BadRequest(loginMessages.invalidConfirmPassword);
     }
 
     if (payload.oldPassword === payload.newPassword) {
-      throw Unauthorized(loginMessages.invalidNewPassword);
+      throw BadRequest(loginMessages.invalidNewPassword);
     }
 
     const { hash, salt } = hashPassword(payload.newPassword);

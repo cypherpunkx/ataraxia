@@ -17,8 +17,9 @@ import {
   passwordResetMessages,
   registrationMessages,
 } from '@/constants';
+
 class AuthController {
-  constructor(private _service: AuthService) {
+  constructor(private _authService: AuthService) {
     this.registerNewUser = this.registerNewUser.bind(this);
     this.loginUser = this.loginUser.bind(this);
     this.getProfile = this.getProfile.bind(this);
@@ -37,7 +38,7 @@ class AuthController {
         status,
       };
 
-      const result = await this._service.register(payload);
+      const result = await this._authService.register(payload);
 
       return sendResponse(
         {
@@ -62,7 +63,7 @@ class AuthController {
         password,
       };
 
-      const result = await this._service.login(payload);
+      const result = await this._authService.login(payload);
 
       return sendResponse(
         {
@@ -84,7 +85,7 @@ class AuthController {
         data: string;
       };
 
-      const result = await this._service.getUserDetails(claims.data);
+      const result = await this._authService.getUserDetails(claims.data);
 
       return sendResponse(
         {
@@ -119,7 +120,7 @@ class AuthController {
         birthdate,
       };
 
-      const result = await this._service.editUserDetails(
+      const result = await this._authService.editUserDetails(
         claims.data,
         payload,
         file!
@@ -143,7 +144,7 @@ class AuthController {
     try {
       const { refreshToken } = req.body as RefreshTokenSchema;
 
-      const result = await this._service.refresh(refreshToken);
+      const result = await this._authService.refresh(refreshToken);
 
       return sendResponse(
         {
@@ -173,7 +174,10 @@ class AuthController {
         confirmPassword,
       };
 
-      const result = await this._service.changePassword(payload, claims.data);
+      const result = await this._authService.changePassword(
+        payload,
+        claims.data
+      );
 
       return sendResponse(
         {
